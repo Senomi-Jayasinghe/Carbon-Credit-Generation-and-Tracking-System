@@ -16,7 +16,6 @@
         for trading credits, and a <strong>wallet system 💳</strong> for storing sales proceeds. 
         This system helps <strong>home garden owners</strong> generate <strong>income 💵</strong> by selling carbon credits to businesses.
     </p>
-
     <h3>✨ Key Features:</h3>
     <ul>
         <li>✔️ <strong>Carbon credit calculation</strong> based on tree growth 🌿 and CO2 sequestration.</li>
@@ -27,7 +26,6 @@
         <li>✔️ <strong>Order Blotter Dashboard 📈</strong> to show Market Watch.</li>
         <li>✔️ <strong>Secure registration 🔐</strong> for carbon credit buyers, sellers, and authorizers.</li>
     </ul>
-
     <h3>🛠️ Tech Stack:</h3>
     <ul>
         <li>🖥 <strong>Front-End:</strong> Bootstrap 🎨, ASP.NET ⚙️</li>
