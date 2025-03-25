@@ -9,8 +9,8 @@
     <h2>Overview</h2>
   <p>
     🌱 Designed and developed a web-based platform for generating and trading carbon credits
-        from home gardens in <strong>Sri Lanka 🇱🇰</strong>, encouraging <strong>sustainable practices 🌍</strong> and helping mitigate 
-        <strong>climate change 🌎</strong>. The system <strong>tracks tree growth 🌳</strong> and calculates <strong>carbon credits</strong> 
+        from home gardens in <strong>Sri Lanka 🇱🇰</strong>, encouraging <strong>sustainable practices </strong> and helping mitigate 
+        <strong>climate change </strong>. The system <strong>tracks tree growth </strong> and calculates <strong>carbon credits</strong> 
         based on <strong>CO2 sequestration</strong> using complex <strong>mathematical models</strong>. 
         It includes an <strong>image recognition module 📸</strong> to track tree growth, a <strong>carbon credit marketplace 💰</strong> 
         for trading credits, and a <strong>wallet system 💳</strong> for storing sales proceeds. 
