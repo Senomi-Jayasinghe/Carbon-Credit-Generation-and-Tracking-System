@@ -1,0 +1,11 @@
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\bin\Debug\net8.0\CarbonCreditCore.deps.json
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\bin\Debug\net8.0\CarbonCreditCore.dll
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\bin\Debug\net8.0\CarbonCreditCore.pdb
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\CarbonCreditCore.GeneratedMSBuildEditorConfig.editorconfig
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\CarbonCreditCore.AssemblyInfoInputs.cache
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\CarbonCreditCore.AssemblyInfo.cs
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\CarbonCreditCore.csproj.CoreCompileInputs.cache
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\CarbonCreditCore.dll
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\refint\CarbonCreditCore.dll
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\CarbonCreditCore.pdb
+D:\ESOFT LMU\PROJECT\CarbonCreditSystem\CarbonCreditCore\obj\Debug\net8.0\ref\CarbonCreditCore.dll

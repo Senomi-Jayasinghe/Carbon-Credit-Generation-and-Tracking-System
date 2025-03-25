@@ -1,0 +1,432 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CarbonCreditsMaster.master.cs" Inherits="CarbonCreditSystem.CarbonCreditsMaster" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Notifications - Kaiadmin Bootstrap 5 Admin Dashboard</title>
+    <meta
+        content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+        name="viewport" />
+    <link
+        rel="icon"
+        href="assets/img/kaiadmin/favicon.ico"
+        type="image/x-icon" />
+
+    <script src="../assets/js/plugin/webfont/webfont.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../assets/js/Scripts/jquery-3.7.1.js"></script>
+    <script src="../assets/js/Scripts/Highcharts-4.0.1/js/highcharts.js"></script>
+    <script>
+        WebFont.load({
+            google: { families: ["Public Sans:300,400,500,600,700"] },
+            custom: {
+                families: [
+                    "Font Awesome 5 Solid",
+                    "Font Awesome 5 Regular",
+                    "Font Awesome 5 Brands",
+                    "simple-line-icons",
+                ],
+                urls: ["../assets/css/fonts.min.css"],
+            },
+            active: function () {
+                sessionStorage.fonts = true;
+            },
+        });
+    </script>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+
+    <style>
+        .breadcrumbs {
+            margin-left: 0px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar -->
+        <div class="sidebar" data-background-color="dark">
+            <div class="sidebar-logo">
+                <!-- Logo Header -->
+                <div class="logo-header" data-background-color="dark">
+                    <a href="../index.html" class="logo">
+                        <img
+                            src="../assets/img/kaiadmin/logo.png"
+                            alt="navbar brand"
+                            class="navbar-brand"
+                            height="20" />
+                    </a>
+                    <div class="nav-toggle">
+                        <button class="btn btn-toggle toggle-sidebar">
+                            <i class="gg-menu-right"></i>
+                        </button>
+                        <button class="btn btn-toggle sidenav-toggler">
+                            <i class="gg-menu-left"></i>
+                        </button>
+                    </div>
+                    <button class="topbar-toggler more">
+                        <i class="gg-more-vertical-alt"></i>
+                    </button>
+                </div>
+                <!-- End Logo Header -->
+            </div>
+            <div class="sidebar-wrapper scrollbar scrollbar-inner">
+                <div class="sidebar-content">
+                    <ul class="nav nav-secondary">
+                        <li class="nav-item">
+                            <a href="Dashboard.aspx">
+                                <i class="fas fa-chart-pie"></i>
+                                <p>Dashboard</p>
+                            </a>
+                        </li>
+                        <%if (roleId == 1) /*Navbar for Traders*/
+                            { %>
+                        <li class="nav-item">
+                            <a href="HomeUI.aspx">
+                                <i class="fas fa-link"></i>
+                                <p>Quick Links</p>
+                            </a>
+                        </li>
+                        <li class="nav-section">
+                            <span class="sidebar-mini-icon">
+                                <i class="fa fa-ellipsis-h"></i>
+                            </span>
+                            <h4 class="text-section">Modules</h4>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="CalculatorUI.aspx?mode=C">
+                                <i class="fas fa-calculator"></i>
+                                <p>Calculator</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="TreeRepositoryUI.aspx">
+                                <i class="fas fa-tree"></i>
+                                <p>Tree Repository</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="CalculatorUI.aspx?mode=G">
+                                <i class="fas fa-hand-holding-heart"></i>
+                                <p>Generate Carbon Credits</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="TrackCarbonCreditsUI.aspx">
+                                <i class="fas fa-chart-line"></i>
+                                <p>Track Carbon Credits</p>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a data-bs-toggle="collapse" href="#tables">
+                                <i class="fas fa-chart-bar"></i>
+                                <p>Trading Platform</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="tables">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="BuyOrderUI.aspx">
+                                            <span class="sub-item">Place a Buy Order</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="SellOrderUI.aspx">
+                                            <span class="sub-item">Place a Sell Order</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="OrdersUI.aspx">
+                                            <span class="sub-item">Track your Orders</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="TradesTableUI.aspx">
+                                            <span class="sub-item">Your Trades</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a data-bs-toggle="collapse" href="#wallets">
+                                <i class="fas fa-chart-bar"></i>
+                                <p>Wallets</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="wallets">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="CarbonCreditWalletUI.aspx">
+                                            <span class="sub-item">Carbon Credit Wallet</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="CashWalletUI.aspx">
+                                            <span class="sub-item">Cash Wallet</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li class="nav-item">
+                            <a data-bs-toggle="collapse" href="#reports">
+                                <i class="fas fa-file-medical-alt"></i>
+                                <p>Reports</p>
+                                <span class="caret"></span>
+                            </a>
+                            <div class="collapse" id="reports">
+                                <ul class="nav nav-collapse">
+                                    <li>
+                                        <a href="ReportsCashWalletUI.aspx">
+                                            <span class="sub-item">Cash Transactions Report</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="ReportsCCWalletUI.aspx">
+                                            <span class="sub-item">Carbon Credit Transactions Report</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <%  } %>
+
+                        <%if (roleId == 2) /*Navbar for Authorizers*/
+                            { %>
+                        <li class="nav-item">
+                            <!--FOR AUTHORIZER-->
+                            <a href="AuthorizeUI.aspx">
+                                <i class="fas fa-stamp"></i>
+                                <p>Authorize Carbon Credits</p>
+                            </a>
+                        </li>
+                        <%  } %>
+
+                        <%if (roleId == 3) /*Navbar for Admin*/
+                            { %>
+                        <!--FOR ADMIN-->
+                        <li class="nav-item">
+                            <a href="AuthorizersUI.aspx">
+                                <i class="fas fa-user-shield"></i>
+                                <p>Manage Authorizers</p>
+                            </a>
+                        </li>
+                        <%  } %>
+                        <li class="nav-item">
+                            <a href="testingmatchalgo.aspx">
+                                <i class="fas fa-user-shield"></i>
+                                <p>Trade Matching Algorithm</p>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- End Sidebar -->
+
+        <div class="main-panel">
+            <div class="main-header">
+                <div class="main-header-logo">
+                    <!-- Logo Header -->
+                    <div class="logo-header" data-background-color="dark">
+                        <a href="../index.html" class="logo">
+                            <img
+                                src="../assets/img/kaiadmin/logo_light.svg"
+                                alt="navbar brand"
+                                class="navbar-brand"
+                                height="20" />
+                        </a>
+                        <div class="nav-toggle">
+                            <button class="btn btn-toggle toggle-sidebar">
+                                <i class="gg-menu-right"></i>
+                            </button>
+                            <button class="btn btn-toggle sidenav-toggler">
+                                <i class="gg-menu-left"></i>
+                            </button>
+                        </div>
+                        <button class="topbar-toggler more">
+                            <i class="gg-more-vertical-alt"></i>
+                        </button>
+                    </div>
+                    <!-- End Logo Header -->
+                </div>
+                <!-- Navbar Header -->
+                <nav
+                    class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom">
+                    <div class="container-fluid">
+
+
+                        <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+
+                            <li class="nav-item topbar-user dropdown hidden-caret">
+                                <a
+                                    class="dropdown-toggle profile-pic"
+                                    data-bs-toggle="dropdown"
+                                    href="#"
+                                    aria-expanded="false">
+                                    <div class="avatar-sm">
+                                        <img
+                                            src="../assets/img/profile2.jpg"
+                                            alt="..."
+                                            class="avatar-img rounded-circle" />
+                                    </div>
+                                    <span class="profile-username">
+                                        <span class="op-7">Hi,</span>
+                                        <asp:Label class="fw-bold" runat="server" ID="lblUsername"></asp:Label>
+                                    </span>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user animated fadeIn">
+                                    <div class="dropdown-user-scroll scrollbar-outer">
+                                        <li>
+                                            <div class="user-box">
+                                                <div class="avatar-lg">
+                                                    <img
+                                                        src="../assets/img/profile2.jpg"
+                                                        alt="image profile"
+                                                        class="avatar-img rounded" />
+                                                </div>
+                                                <div class="u-text">
+                                                    <h4>
+                                                        <asp:Label runat="server" ID="lblname"></asp:Label></h4>
+                                                    <p class="text-muted">hello@example.com</p>
+                                                    <a href="EditProfile.aspx" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="BankDetailsUI.aspx">Register Bank Account</a>
+                                            <a class="dropdown-item" href="UpdatePasswordUI.aspx">Update Password</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="LogOut.aspx">Logout</a>
+                                        </li>
+                                    </div>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- End Navbar -->
+            </div>
+
+            <div class="container">
+                <form id="form1" runat="server">
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                </form>
+            </div>
+
+            <footer class="footer">
+                <div class="container-fluid d-flex justify-content-between">
+                    <nav class="pull-left">
+                        <ul class="nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="HomeUI.aspx">Carbon Credit Generation & Tracking System
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div>
+                        By Senomi Jayasinghe
+       
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!--   Core JS Files   -->
+    <script src="../assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="../assets/js/core/popper.min.js"></script>
+    <script src="../assets/js/core/bootstrap.min.js"></script>
+    <!-- Bootstrap Notify -->
+    <script src="../assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+    <!-- jQuery Scrollbar -->
+    <script src="../assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+    <!-- Kaiadmin JS -->
+    <script src="../assets/js/kaiadmin.min.js"></script>
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="../assets/js/setting-demo2.js"></script>
+    <script>
+        $("#displayNotif").on("click", function () {
+            var placementFrom = $("#notify_placement_from option:selected").val();
+            var placementAlign = $("#notify_placement_align option:selected").val();
+            var state = $("#notify_state option:selected").val();
+            var style = $("#notify_style option:selected").val();
+            var content = {};
+
+            content.message =
+                'Turning standard Bootstrap alerts into "notify" like notifications';
+            content.title = "Bootstrap notify";
+            if (style == "withicon") {
+                content.icon = "fa fa-bell";
+            } else {
+                content.icon = "none";
+            }
+            content.url = "index.html";
+            content.target = "_blank";
+
+            $.notify(content, {
+                type: state,
+                placement: {
+                    from: placementFrom,
+                    align: placementAlign,
+                },
+                time: 1000,
+                delay: 0,
+            });
+        });
+    </script>
+    <script>
+        function printDiv(divId) {
+            // Get the HTML of the specified div
+            const contentToPrint = document.getElementById(divId).innerHTML;
+
+            // Create a new window to hold the printable content
+            const printWindow = window.open('', '_blank', 'width=600,height=600');
+
+            // Write the div content to the new window's document
+            printWindow.document.write(`
+                <html>
+                    <head>
+                        <title>Print</title>
+                        <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+                        <link rel="stylesheet" href="../assets/css/plugins.min.css" />
+                        <link rel="stylesheet" href="../assets/css/kaiadmin.min.css" />
+                    </head>
+                    <body>
+                        ${contentToPrint}
+                    </body>
+                </html>
+            `);
+
+            // Close the document to apply the styles
+            printWindow.document.close();
+            // Wait until the new window is loaded before printing
+            printWindow.onload = function () {
+                printWindow.print(); // Call the print function
+                printWindow.onafterprint = function () {
+                    printWindow.close(); // Close the window after printing
+                };
+            };
+        }
+    </script>
+</body>
+</html>
